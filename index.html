@@ -761,7 +761,7 @@ footer{background:#2c2438;color:#a9a3b8;padding:48px 0 34px;font-size:13.5px;}
    ★★★ 여기 1곳만 수정하세요 ★★★
    Apps Script 배포 시 받은 웹 앱 URL (반드시 /exec 로 끝나야 함)
    ══════════════════════════════════════════════════════════════ */
-const GAS_URL = 'https://script.google.com/macros/s/여기에_본인_배포URL_붙여넣기/exec';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbyzuTzXbybNDFOsnnfuVhUlX2rTYdAATb27BsRTZHp-4-cj7jC4RsLrNy4GfA_-E_Xa/exec';
 /* ══════════════════════════════════════════════════════════════ */
 
 const FORM_OPENED = Date.now();   // 폼이 열린 시각 (너무 빠른 제출=봇 판별용)
@@ -777,7 +777,7 @@ function goForm(){
 
 /* ---------- 오늘 신청 수 불러오기 (배지) ---------- */
 async function loadTodayCount(){
-  if(GAS_URL.indexOf('https://script.google.com/macros/s/AKfycbyzuTzXbybNDFOsnnfuVhUlX2rTYdAATb27BsRTZHp-4-cj7jC4RsLrNy4GfA_-E_Xa/exec') !== -1) return;   // URL 미설정 시 조용히 중단
+  if(GAS_URL.indexOf('여기에') !== -1) return;   // URL 미설정 시 조용히 중단
   try{
     const r = await fetch(GAS_URL + '?action=today');
     const j = await r.json();
